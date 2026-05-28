@@ -612,6 +612,7 @@ h2::after {
 }
 
 @media (max-width: 768px) {
+
     nav {
         padding: 10px 5%;             
     }
@@ -619,7 +620,7 @@ h2::after {
     nav, .navbar { 
         flex-wrap: wrap; 
         justify-content: center;
-        padding-bottom: 5px;        
+        padding-bottom: 5px;          
     }
 
     .navbar {
@@ -628,13 +629,13 @@ h2::after {
     }
 
     .navbar li { 
-        margin-left: 10px;           
+        margin-left: 10px;            
         margin-right: 10px;
     }
 
     .navbar a {
         font-size: 0.95rem; 
-        padding-bottom: 5px;        
+        padding-bottom: 5px;          
     }
 
     .nav-indicator {
@@ -647,21 +648,22 @@ h2::after {
         padding: 30px 20px;
         flex-direction: column;     
         text-align: center;         
-        gap: 20px;                    
+        gap: 0;                     
     }
 
-    .hero-image {
-        order: -1;                  
-        margin-bottom: 10px;
+    .hero-text, .hero-content {
+        display: flex;
+        flex-direction: column;     
+        align-items: center;
     }
 
-    .hero-image img {
-        max-width: 65%;            
-        margin: 0 auto;
+    .hero-subtitle, h2 { 
+        order: 1; 
     }
-
+    
     .hero-title, h1 { 
-        font-size: 2rem !important;  
+        order: 2; 
+        font-size: 2rem !important;   
         line-height: 1.2;
         margin-top: 10px;
         margin-bottom: 15px;
@@ -678,8 +680,26 @@ h2::after {
         font-size: 2rem;         
     }
 
-    .hero-subtitle, h2 {
-        font-size: 1.2rem;
+    .subtitle, .hero p { 
+        order: 3; 
+        margin-bottom: 20px;
+    }
+
+    .hero-image { 
+        order: 4; 
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .hero-image img {
+        max-width: 65%;             
+        margin: 0 auto;
+    }
+
+    .btn { 
+        order: 5; 
+        margin-top: 5px;
     }
 
     .about-container {
