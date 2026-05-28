@@ -612,38 +612,58 @@ h2::after {
 }
 
 @media (max-width: 768px) {
+    nav {
+        padding: 10px 5%;             
+    }
 
     nav, .navbar { 
         flex-wrap: wrap; 
         justify-content: center;
-        padding: 15px 10px;
+        padding-bottom: 5px;        
     }
 
-    .navbar-links, .nav-menu { 
-        gap: 12px; 
-        font-size: 0.9rem; 
+    .navbar {
+        padding-left: 0;
+        margin-top: 10px;
+    }
+
+    .navbar li { 
+        margin-left: 10px;           
+        margin-right: 10px;
+    }
+
+    .navbar a {
+        font-size: 0.95rem; 
+        padding-bottom: 5px;        
+    }
+
+    .nav-indicator {
+        bottom: -2px !important;      
+        height: 2.5px;                
     }
 
     .hero {
         height: auto;              
-        padding: 40px 20px;
+        padding: 30px 20px;
         flex-direction: column;     
         text-align: center;         
-        gap: 35px;
+        gap: 20px;                    
     }
 
     .hero-image {
-        order: 2;                   
+        order: -1;                  
+        margin-bottom: 10px;
     }
 
     .hero-image img {
-        max-width: 80%;            
+        max-width: 65%;            
         margin: 0 auto;
     }
 
     .hero-title, h1 { 
-        font-size: 2.2rem !important;
+        font-size: 2rem !important;  
         line-height: 1.2;
+        margin-top: 10px;
         margin-bottom: 15px;
 
         background: linear-gradient(270deg, #ff4b91, #ff76ce, #a855f7, #94a3b8);
@@ -655,11 +675,11 @@ h2::after {
     }
 
     .hero h1 span {
-        font-size: 2.2rem;         
+        font-size: 2rem;         
     }
 
     .hero-subtitle, h2 {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 
     .about-container {
@@ -681,6 +701,7 @@ h2::after {
     .about-text {
         height: auto;               
     }
+
     .skills-grid {
         grid-template-columns: repeat(2, 1fr) !important; 
         gap: 15px;
@@ -689,7 +710,7 @@ h2::after {
     .container, section {
         width: 100%;
         max-width: 100%;
-        padding: 50px 20px !important; 
+        padding: 40px 20px !important; 
         box-sizing: border-box;
     }
 
