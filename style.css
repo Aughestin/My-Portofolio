@@ -624,6 +624,23 @@ h2::after {
         font-size: 0.9rem; 
     }
 
+    .hero {
+        height: auto;              
+        padding: 40px 20px;
+        flex-direction: column;     
+        text-align: center;         
+        gap: 35px;
+    }
+
+    .hero-image {
+        order: 2;                   
+    }
+
+    .hero-image img {
+        max-width: 80%;            
+        margin: 0 auto;
+    }
+
     .hero-title, h1 { 
         font-size: 2.2rem !important;
         line-height: 1.2;
@@ -637,15 +654,42 @@ h2::after {
         animation: gradientMove 4s ease infinite; 
     }
 
+    .hero h1 span {
+        font-size: 2.2rem;         
+    }
+
     .hero-subtitle, h2 {
         font-size: 1.3rem;
     }
 
-    .container {
+    .about-container {
+        flex-direction: column;     
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .about-image {
+        justify-content: center;    
+    }
+
+    .about-image img {
+        width: 280px;               
+        height: 280px;
+    }
+
+    .about-text {
+        height: auto;               
+    }
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr) !important; 
+        gap: 15px;
+    }
+
+    .container, section {
         width: 100%;
         max-width: 100%;
-        padding-left: 20px;
-        padding-right: 20px;
+        padding: 50px 20px !important; 
         box-sizing: border-box;
     }
 
