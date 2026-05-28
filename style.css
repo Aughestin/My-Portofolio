@@ -613,59 +613,37 @@ h2::after {
 
 @media (max-width: 768px) {
 
-    nav {
-        padding: 10px 5%;             
-    }
-
     nav, .navbar { 
         flex-wrap: wrap; 
         justify-content: center;
-        padding-bottom: 5px;          
+        padding: 15px 10px;
     }
 
-    .navbar {
-        padding-left: 0;
-        margin-top: 10px;
-    }
-
-    .navbar li { 
-        margin-left: 10px;            
-        margin-right: 10px;
-    }
-
-    .navbar a {
-        font-size: 0.95rem; 
-        padding-bottom: 5px;          
-    }
-
-    .nav-indicator {
-        bottom: -2px !important;      
-        height: 2.5px;                
+    .navbar-links, .nav-menu { 
+        gap: 12px; 
+        font-size: 0.9rem; 
     }
 
     .hero {
-        height: auto;              
-        padding: 30px 20px;
+        height: auto;               
+        padding: 40px 20px;
         flex-direction: column;     
-        text-align: center;         
-        gap: 0;                     
+        text-align: center;        
+        gap: 35px;
     }
 
-    .hero-text, .hero-content {
-        display: flex;
-        flex-direction: column;     
-        align-items: center;
+    .hero-image {
+        order: 2;                   
     }
 
-    .hero-subtitle, h2 { 
-        order: 1; 
+    .hero-image img {
+        max-width: 80%;            
+        margin: 0 auto;
     }
-    
+
     .hero-title, h1 { 
-        order: 2; 
-        font-size: 2rem !important;   
+        font-size: 2.2rem !important;
         line-height: 1.2;
-        margin-top: 10px;
         margin-bottom: 15px;
 
         background: linear-gradient(270deg, #ff4b91, #ff76ce, #a855f7, #94a3b8);
@@ -677,44 +655,26 @@ h2::after {
     }
 
     .hero h1 span {
-        font-size: 2rem;         
+        font-size: 2.2rem;          
     }
 
-    .subtitle, .hero p { 
-        order: 3; 
-        margin-bottom: 20px;
-    }
-
-    .hero-image { 
-        order: 4; 
-        margin-bottom: 20px;
-        display: flex;
-        justify-content: center;
-    }
-
-    .hero-image img {
-        max-width: 65%;             
-        margin: 0 auto;
-    }
-
-    .btn { 
-        order: 5; 
-        margin-top: 5px;
+    .hero-subtitle, h2 {
+        font-size: 1.3rem;
     }
 
     .about-container {
-        flex-direction: column;     
+        flex-direction: column;   
         align-items: center;
         text-align: center;
         gap: 30px;
     }
 
     .about-image {
-        justify-content: center;    
+        justify-content: center;   
     }
 
     .about-image img {
-        width: 280px;               
+        width: 280px;              
         height: 280px;
     }
 
@@ -730,7 +690,7 @@ h2::after {
     .container, section {
         width: 100%;
         max-width: 100%;
-        padding: 40px 20px !important; 
+        padding: 50px 20px !important; 
         box-sizing: border-box;
     }
 
