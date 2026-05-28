@@ -613,35 +613,54 @@ h2::after {
 
 @media (max-width: 768px) {
 
-    nav, .navbar { 
-        flex-wrap: wrap; 
-        justify-content: center;
-        padding: 15px 10px;
+    nav {
+        padding: 10px 5%;
     }
 
-    .navbar-links, .nav-menu { 
-        gap: 12px; 
-        font-size: 0.9rem; 
+    nav, .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-bottom: 5px;
+    }
+
+    .navbar {
+        padding-left: 0;
+        margin-top: 10px;
+    }
+
+    .navbar li {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .navbar a {
+        font-size: 0.95rem;
+        padding-bottom: 5px;
+    }
+
+    .nav-indicator {
+        bottom: -2px !important;
+        height: 2.5px;
     }
 
     .hero {
-        height: auto;               
+        height: auto;
         padding: 40px 20px;
-        flex-direction: column;     
-        text-align: center;        
+        flex-direction: column;
+        text-align: center;
         gap: 35px;
     }
 
     .hero-image {
-        order: 2;                   
+        order: 2;
     }
 
     .hero-image img {
-        max-width: 80%;            
+        max-width: 80%;
         margin: 0 auto;
     }
 
-    .hero-title, h1 { 
+    .hero-title, h1 {
         font-size: 2.2rem !important;
         line-height: 1.2;
         margin-bottom: 15px;
@@ -649,13 +668,13 @@ h2::after {
         background: linear-gradient(270deg, #ff4b91, #ff76ce, #a855f7, #94a3b8);
         background-size: 400% 400%;
         -webkit-background-clip: text;
-        background-clip: text; 
+        background-clip: text;
         -webkit-text-fill-color: transparent;
-        animation: gradientMove 4s ease infinite; 
+        animation: gradientMove 4s ease infinite;
     }
 
     .hero h1 span {
-        font-size: 2.2rem;          
+        font-size: 2.2rem;
     }
 
     .hero-subtitle, h2 {
@@ -663,34 +682,34 @@ h2::after {
     }
 
     .about-container {
-        flex-direction: column;   
+        flex-direction: column;
         align-items: center;
         text-align: center;
         gap: 30px;
     }
 
     .about-image {
-        justify-content: center;   
+        justify-content: center;
     }
 
     .about-image img {
-        width: 280px;              
+        width: 280px;
         height: 280px;
     }
 
     .about-text {
-        height: auto;               
+        height: auto;
     }
 
     .skills-grid {
-        grid-template-columns: repeat(2, 1fr) !important; 
+        grid-template-columns: repeat(2, 1fr) !important;
         gap: 15px;
     }
 
     .container, section {
         width: 100%;
         max-width: 100%;
-        padding: 50px 20px !important; 
+        padding: 50px 20px !important;
         box-sizing: border-box;
     }
 
@@ -704,7 +723,7 @@ h2::after {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
-} 
+}
 
 @keyframes fadeInUp {
     from {
@@ -724,7 +743,16 @@ h2::after {
 }
 
 @keyframes pulseButton {
-    0% { transform: scale(1); box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4); }
-    50% { transform: scale(1.03); box-shadow: 0 4px 25px rgba(236, 72, 153, 0.7); }
-    100% { transform: scale(1); box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4); }
+    0% {
+        transform: scale(1);
+        box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4);
+    }
+    50% {
+        transform: scale(1.03);
+        box-shadow: 0 4px 25px rgba(236, 72, 153, 0.7);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4);
+    }
 }
