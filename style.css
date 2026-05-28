@@ -9,13 +9,14 @@ body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     color: #f1f5f9;
-    background: radial-gradient(circle at 10% 20%, rgba(234, 88, 12, 0.12) 0%, transparent 40%),
-                radial-gradient(circle at 90% 30%, rgba(236, 72, 153, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 30% 70%, rgba(254, 240, 138, 0.08) 0%, transparent 40%),
-                radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.12) 0%, transparent 40%),
+    background: radial-gradient(circle at 10% 20%, rgba(234, 88, 12, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 90% 30%, rgba(236, 72, 153, 0.18) 0%, transparent 50%),
+                radial-gradient(circle at 30% 70%, rgba(254, 240, 138, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.15) 0%, transparent 40%),
                 #0b0f19;
     background-size: 200% 200%;
-    animation: gradientMove 12s ease infinite;
+    /* Ditingkatkan dari 12s ke 8s supaya pergerakan background lebih hidup */
+    animation: gradientMove 8s ease infinite;
     background-attachment: fixed; 
 }
 
@@ -73,6 +74,19 @@ nav {
     color: #ffffff;
 }
 
+/* --- ANIMASI HERO SECTION --- */
+.hero {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    background: transparent; 
+    gap: 50px;
+    /* Efek animasi muncul saat page load */
+    animation: fadeInUp 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
 .hero-image {
     flex: 1;
     display: flex;
@@ -85,16 +99,8 @@ nav {
     border-radius: 10%; 
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); 
     border: 0px solid #fff;
-}
-
-.hero {
-    height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: left;
-    background: transparent; 
-    gap: 50px;
+    /* Efek mengambang naik turun pada gambar */
+    animation: floatImage 4s ease-in-out infinite;
 }
 
 .hero h1 span {
@@ -103,6 +109,7 @@ nav {
     color: #dc586d;
 }
 
+/* --- TOMBOL DENGAN ANIMASI DENYUT (PULSE) --- */
 .btn {
     display: inline-block;
     margin-top: 20px;
@@ -115,14 +122,17 @@ nav {
     border: 1px solid #ec4899;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4); 
+    /* Otomatis berdenyut lembut menarik perhatian user */
+    animation: pulseButton 2s infinite;
 }
 
 .btn:hover {
     background: transparent;
     color: #ec4899;
     border-color: #ec4899;
-    box-shadow: 0 0 25px rgba(236, 72, 153, 0.6);
-    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(236, 72, 153, 0.8);
+    transform: translateY(-3px);
+    animation: none; /* Berhenti berdenyut saat di-hover */
 }
 
 .social {
@@ -192,9 +202,17 @@ h2::after {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
+.about-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+}
+
 .skill-text {
     text-align: center;
     color: #94a3b8; 
+    margin-bottom: 24px;
 }
 
 .skills-section h2 span {
@@ -587,21 +605,53 @@ h2::after {
 }
 
 .contact-card:hover {
-    transform: translateY(-3px);
+    transform: translateY(-5px);
     border-color: #ec4899;
     background: rgba(15, 23, 42, 0.6);
-    box-shadow: 0 8px 25px rgba(236, 72, 153, 0.15);
+    box-shadow: 0 8px 25px rgba(236, 72, 153, 0.3);
 }
 
-@media (max-width: 1024px) {
-    .skills-grid { 
-        grid-template-columns: repeat(2, 1fr); 
+@media (max-width: 768px) {
+
+    nav, .navbar { 
+        flex-wrap: wrap; 
+        justify-content: center;
+        padding: 15px 10px;
     }
-}
 
-@media (max-width: 600px) {
-    .skills-grid { 
-        grid-template-columns: 1fr; 
+    .navbar-links, .nav-menu { 
+        gap: 12px; 
+        font-size: 0.9rem; 
+    }
+
+    .hero-title, h1 { 
+        font-size: 2.2rem !important;
+        line-height: 1.2;
+        margin-bottom: 15px;
+
+        background: linear-gradient(270deg, #ff4b91, #ff76ce, #a855f7, #94a3b8);
+        background-size: 400% 400%;
+        -webkit-background-clip: text;
+        background-clip: text; 
+        -webkit-text-fill-color: transparent;
+        animation: gradientMove 4s ease infinite; 
+    }
+
+    .hero-subtitle, h2 {
+        font-size: 1.3rem;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        box-sizing: border-box;
+    }
+
+    .contact-card:active, .btn:active {
+        transform: scale(0.94) !important;
+        transition: transform 0.15s ease;
     }
 }
 
@@ -609,4 +659,27 @@ h2::after {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
+} 
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatImage {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes pulseButton {
+    0% { transform: scale(1); box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4); }
+    50% { transform: scale(1.03); box-shadow: 0 4px 25px rgba(236, 72, 153, 0.7); }
+    100% { transform: scale(1); box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4); }
 }
