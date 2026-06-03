@@ -49,47 +49,67 @@ window.addEventListener('load', () => {
 });
 
 const projectDetails = {
-    "lapor-kan": {
-        title: "Lapor.Kan",
-        images: ["images/laporkan1.png", "images/laporkan2.png", "images/laporkan3.png"],
-        tech: ["HTML", "CSS", "MySQL"],
-        description: "Lapor.Kan adalah platform berbasis web yang dirancang khusus untuk mempermudah mahasiswa dalam melaporkan kerusakan fasilitas di area kampus.",
-        features: [
-            "Autentikasi akun mahasiswa & admin kampus resmi.",
-            "Formulir aduan beserta unggah foto bukti kerusakan fisik.",
-            "Dashboard tracking status laporan (Pending, Diproses, Selesai)."
-        ]
-    },
-    "cineflix": {
-        title: "CineFlix.id",
-        images: ["images/cineflix1.png", "images/cineflix2.png", "images/cineflix3.png"],
-        tech: ["HTML", "CSS", "JavaScript", "API Integration"],
-        description: "CineFlix.id merupakan website rekomendasi film interaktif yang menyajikan daftar film populer dan rating.",
-        features: [
-            "Pencarian film instan secara real-time berdasarkan judul.",
-            "Filter kategori lengkap (Action, Horror, Comedy, Sci-Fi)."
-        ]
-    },
-    "carent": {
-        title: "CARENT",
-        images: ["images/carent1.png", "images/carent2.png", "images/carent3.png"], 
-        tech: ["HTML", "MySQL", "Bootstrap"],
-        description: "CARENT adalah solusi manajemen persewaan mobil yang mempermudah proses booking kendaraan secara online.",
-        features: [
-            "Katalog mobil aktif lengkap dengan informasi harga.",
-            "Form pemesanan sewa lepas kunci atau dengan pengemudi."
-        ]
-    },
-    "barberbooking": { 
-        title: "Barbershop",
-        images: ["images/barber.png"], 
-        tech: ["Flutter", "Dart"],
-        description: "Solusi digital yang mempermudah proses booking jadwal potong rambut secara online.",
-        features: [
-            "Katalog gaya rambut tren terbaru",
-            "Form reservasi online untuk memilih jadwal kunjungan"
-        ]
-    },
+"lapor-kan": {
+    title: "Lapor.Kan",
+    images: [
+    "images/laporkan1.png",
+    "images/laporkan2.png",
+    "images/laporkan3.png"
+    ],
+    tech: ["HTML", "CSS", "PHP", "MySQL"],
+    description: "Lapor.Kan adalah platform berbasis web yang membantu mahasiswa melaporkan kerusakan fasilitas kampus serta memudahkan pihak kampus dalam mengelola dan memantau status laporan secara efisien.",
+    features: [
+    "Autentikasi akun mahasiswa dan admin kampus.",
+    "Formulir pelaporan kerusakan dengan unggah foto sebagai bukti pendukung.",
+    "Dashboard pemantauan status laporan (Pending, Diproses, Selesai)."
+    ]
+},
+
+"cineflix": {
+    title: "CineFlix.id",
+    images: [
+        "images/cineflix1.png",
+        "images/cineflix2.png",
+        "images/cineflix3.png"
+    ],
+    tech: ["HTML", "CSS", "JavaScript", "API Integration"],
+    description: "CineFlix.id merupakan website rekomendasi film yang memanfaatkan Movie API untuk menampilkan film populer, detail film, rating, dan pencarian film secara real-time.",
+    features: [
+        "Pencarian film secara real-time berdasarkan judul.",
+        "Menampilkan informasi film, rating, dan film yang sedang populer.",
+        "Filter film berdasarkan kategori seperti Action, Horror, Comedy, dan Sci-Fi."
+    ]
+},
+
+"DanaWise": {
+    title: "DanaWise",
+    images: [
+        "images/danawise1.png",
+        "images/danawise2.png",
+        "images/danawise3.png",
+        "images/danawise4.png"
+    ],
+    tech: ["HTML", "CSS", "JavaScript"],
+    description: "DanaWise adalah website manajemen keuangan pribadi yang membantu pengguna mencatat pemasukan dan pengeluaran, memantau kondisi keuangan, serta menganalisis transaksi melalui dashboard interaktif.",
+    features: [
+        "Mencatat transaksi pemasukan dan pengeluaran secara mudah.",
+        "Dashboard interaktif untuk menampilkan ringkasan kondisi keuangan.",
+        "Visualisasi transaksi melalui grafik untuk membantu analisis keuangan.",
+        "Penyimpanan data menggunakan Local Storage sehingga data tetap tersimpan di browser."
+    ]
+},
+
+"ingetin": {
+    title: "Inget.in",
+    images: ["images/ingetin.png"],
+    tech: ["Flutter", "Dart"],
+    description: "Inget.in adalah aplikasi mobile berbasis Flutter yang membantu pengguna mencatat informasi penting dan mengelola tugas harian melalui fitur pencatatan dan checklist aktivitas.",
+    features: [
+        "Menambah, mengedit, dan menghapus catatan atau tugas.",
+        "Checklist tugas untuk memantau progres penyelesaian aktivitas.",
+        "Antarmuka responsif dan mudah digunakan pada perangkat mobile."
+    ]
+}
 };
 
 const modal = document.getElementById("projectModal");

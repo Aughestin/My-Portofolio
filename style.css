@@ -15,7 +15,6 @@ body {
                 radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.15) 0%, transparent 40%),
                 #0b0f19;
     background-size: 200% 200%;
-    /* Ditingkatkan dari 12s ke 8s supaya pergerakan background lebih hidup */
     animation: gradientMove 8s ease infinite;
     background-attachment: fixed; 
 }
@@ -74,7 +73,6 @@ nav {
     color: #ffffff;
 }
 
-/* --- ANIMASI HERO SECTION --- */
 .hero {
     height: 90vh;
     display: flex;
@@ -83,7 +81,6 @@ nav {
     text-align: left;
     background: transparent; 
     gap: 50px;
-    /* Efek animasi muncul saat page load */
     animation: fadeInUp 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
@@ -99,17 +96,22 @@ nav {
     border-radius: 10%; 
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); 
     border: 0px solid #fff;
-    /* Efek mengambang naik turun pada gambar */
     animation: floatImage 4s ease-in-out infinite;
 }
 
 .hero h1 span {
     display: block;
-    font-size: 3rem;
+    font-size: 2rem;
     color: #dc586d;
+    white-space: nowrap;      
+    overflow: hidden;         
+    border-right: 3px solid #dc586d;
+    width: 0; 
+    animation: 
+        typing 3.5s steps(23) forwards, 
+        blink-caret 0.75s step-end infinite;
 }
 
-/* --- TOMBOL DENGAN ANIMASI DENYUT (PULSE) --- */
 .btn {
     display: inline-block;
     margin-top: 20px;
@@ -122,7 +124,6 @@ nav {
     border: 1px solid #ec4899;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4); 
-    /* Otomatis berdenyut lembut menarik perhatian user */
     animation: pulseButton 2s infinite;
 }
 
@@ -132,7 +133,7 @@ nav {
     border-color: #ec4899;
     box-shadow: 0 0 25px rgba(236, 72, 153, 0.8);
     transform: translateY(-3px);
-    animation: none; /* Berhenti berdenyut saat di-hover */
+    animation: none; 
 }
 
 .social {
@@ -212,57 +213,70 @@ h2::after {
 .skill-text {
     text-align: center;
     color: #94a3b8; 
-    margin-bottom: 24px;
+    margin-bottom: 32px;
 }
 
 .skills-section h2 span {
     color: #ea580c;
 }
 
-.subtitle {
-    color: #94a3b8;
-    margin-bottom: 40px;
-    font-size: 0.9rem;
+.skill-category {
+    margin-bottom: 32px;
+}
+
+.category-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #f1f5f9;
+    margin-bottom: 16px;
+    text-align: left;
+    border-left: 3px solid #ea580c;
+    padding-left: 10px;
 }
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 130px)); 
+    gap: 16px;
+    justify-content: start; 
 }
 
-.skill-card {
-    padding: 20px;
-    border-radius: 15px;
-    text-align: left;
+.skill-card-centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;   
+    padding: 16px 12px;     
+    border-radius: 10px; 
+    width: 110px;
+    height: 110px; 
+
+    margin: 0; 
     background: rgba(15, 23, 42, 0.45);
     border: 1px solid rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(5px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
 }
 
-.skill-card:hover {
-    transform: translateY(-5px);
+.skill-card-centered:hover {
+    transform: translateY(-3px);
     border-color: rgba(255, 255, 255, 0.15);
     background: rgba(15, 23, 42, 0.6);
 }
 
-.skill-header {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 20px;
+.skill-card-centered iconify-icon {
+    font-size: 28px;       
+    margin-bottom: 8px;
 }
 
-.skill-header iconify-icon {
-    font-size: 30px;
-}
-
-.skill-header h3 {
-    font-size: 1.1rem;
+.skill-card-centered h3 {
+    font-size: 0.9rem; 
     font-weight: 500;
-    color: #ffffff; 
+    color: #ffffff;
+    margin: 0;
+    text-align: center;
+    white-space: nowrap; 
 }
 
 .prof-text {
@@ -723,6 +737,16 @@ h2::after {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 23ch; } 
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #dc586d; } 
 }
 
 @keyframes fadeInUp {
